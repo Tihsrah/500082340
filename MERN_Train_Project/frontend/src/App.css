@@ -1,83 +1,82 @@
-/* .App {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.delayed {
-  color: red;
-} */
 /* Overall styling for the App container */
 .App {
   font-family: Arial, Helvetica, sans-serif;
   padding: 20px;
   text-align: center;
-  background-color: #f4f4f4; /* Add a light background color */
+  background-color: #f4f4f4;
 }
 
-/* Styling for delayed trains, making them more noticeable */
-.delayed {
-  color: red;
-  font-weight: bold; /* Make delayed trains text bold */
+/* Styling for header elements */
+h1, h2 {
+  margin-bottom: 20px;
 }
 
-/* Styling for train list items */
+h1 {
+  color: #007bff;
+}
+
+h2 {
+  color: #333;
+}
+
+/* Input and Select box styles */
+input[type="text"], select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styling for train list */
 ul {
-  list-style-type: none; /* Remove bullet points */
+  list-style-type: none;
   padding: 0;
 }
 
 li {
-  border: 1px solid #ccc; /* Add a border around each train item */
+  border: 1px solid #ccc;
   padding: 10px;
   margin: 10px 0;
-  background-color: #fff; /* White background for better readability */
-  cursor: pointer; /* Change cursor to pointer on hover for clickable items */
-  display: flex; /* Use flexbox to align train information */
-  justify-content: space-between; /* Space evenly between train name and additional info */
-  align-items: center; /* Center vertically */
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Styling for selected train item */
-li.selected {
-  background-color: #e0e0e0; /* Light gray background for selected train */
-}
-
-/* Styling for additional information within train list items */
 li span {
-  margin-left: 10px; /* Add spacing between train name and additional info */
+  margin-left: 10px;
 }
 
-/* Styling for search input */
-input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* Styling for delayed and selected trains */
+.delayed {
+  color: red;
+  font-weight: bold;
 }
 
-/* Styling for select dropdown */
-select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+li.selected {
+  background-color: #e0e0e0;
 }
 
-/* Styling for buttons */
-button {
+/* Buttons */
+button, a {
+  display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff; /* Blue button color */
-  color: #fff; /* White text color */
+  background-color: #007bff;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  text-decoration: none;
 }
 
-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+button:hover, a:hover {
+  background-color: #0056b3;
 }
 
-/* Styling for booking details */
-.booking-details {
+/* Detail and Booking Sections */
+.detail-section, .booking-section {
   margin-top: 20px;
   padding: 20px;
   border: 1px solid #ccc;
@@ -85,41 +84,13 @@ button:hover {
   background-color: #fff;
 }
 
-/* Styling for train details */
-.train-details {
-  margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-}
-
-/* Styling for header elements */
-h1 {
-  color: #007bff; /* Blue header text color */
-}
-
-h2 {
-  color: #333; /* Dark header text color */
-}
-
-/* Styling for success message */
-.success-message {
-  color: #28a745; /* Green text color for success messages */
-}
-
-/* Styling for error message */
-.error-message {
-  color: #dc3545; /* Red text color for error messages */
-}
-
-/* Responsive styling for smaller screens */
+/* Responsive styles */
 @media (max-width: 768px) {
   li {
-    flex-direction: column; /* Stack train information for smaller screens */
+    flex-direction: column;
     text-align: left;
   }
   li span {
-    margin-top: 5px; /* Add spacing between additional info in smaller screens */
+    margin-top: 5px;
   }
 }
