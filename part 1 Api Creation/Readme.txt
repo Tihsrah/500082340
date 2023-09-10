@@ -1,0 +1,1 @@
+It is using the data which has been fetched from fetchTrains.js, getAuthToken,registerCompany
