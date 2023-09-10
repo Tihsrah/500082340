@@ -249,7 +249,7 @@ function App() {
     <Router>
       <div className="App">
       <Link to="/">
-          Train Information
+          <h2>Train Information</h2>
         </Link>
         <Routes>
           <Route path="/" element={<TrainList />} />

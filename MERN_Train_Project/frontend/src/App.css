@@ -1,44 +1,51 @@
-/* Overall styling for the App container */
+/* Classy Background with Gradient */
 .App {
   font-family: Arial, Helvetica, sans-serif;
   padding: 20px;
   text-align: center;
-  background-color: #f4f4f4;
+  min-height: 100vh; 
+  background-image: linear-gradient(to right, #1a3b5d, #406e91);
+  color: white;
 }
 
-/* Styling for header elements */
-h1, h2 {
-  margin-bottom: 20px;
+/* Text Shadow for Improved Readability */
+h1, h2, p {
+  text-shadow: 2px 2px 4px #000000;
 }
 
+/* Header Elements */
 h1 {
-  color: #007bff;
+  color: #fff;
+  cursor: pointer;
 }
 
 h2 {
-  color: #333;
+  color: #ccc;
 }
 
-/* Input and Select box styles */
+/* Input and Select Styling */
 input[type="text"], select {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
-/* Styling for train list */
+/* List Styling */
 ul {
   list-style-type: none;
   padding: 0;
 }
 
 li {
-  border: 1px solid #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   padding: 10px;
   margin: 10px 0;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -49,42 +56,34 @@ li span {
   margin-left: 10px;
 }
 
-/* Styling for delayed and selected trains */
+/* Additional Styling for Delayed Trains */
 .delayed {
   color: red;
   font-weight: bold;
 }
 
-li.selected {
-  background-color: #e0e0e0;
-}
-
-/* Buttons */
-button, a {
-  display: inline-block;
+/* Button Styling */
+button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #f39c12;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  text-decoration: none;
+}
+a {
+  /* ... existing styles ... */
+  color: #fff; /* White text color */
 }
 
-button:hover, a:hover {
-  background-color: #0056b3;
+a:hover {
+  color: #ccc; /* Light gray text color on hover */
+}
+button:hover {
+  background-color: #d87c07;
 }
 
-/* Detail and Booking Sections */
-.detail-section, .booking-section {
-  margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-}
-
-/* Responsive styles */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   li {
     flex-direction: column;
@@ -93,23 +92,4 @@ button:hover, a:hover {
   li span {
     margin-top: 5px;
   }
-}
-/* Additional Styling for expensive trains */
-.expensive {
-  border: 2px solid gold;
-}
-
-/* Additional Styling for cheap trains */
-.cheap {
-  border: 2px solid green;
-}
-
-/* Additional Styling for AC class */
-.ac-class {
-  font-style: italic;
-}
-
-/* Additional Styling for Sleeper class */
-.sleeper-class {
-  text-decoration: underline;
 }
