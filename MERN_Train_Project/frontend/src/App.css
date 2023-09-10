@@ -1,44 +1,125 @@
-.App {
+/* .App {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .delayed {
   color: red;
+} */
+/* Overall styling for the App container */
+.App {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  text-align: center;
+  background-color: #f4f4f4; /* Add a light background color */
 }
 
-/*
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Styling for delayed trains, making them more noticeable */
+.delayed {
+  color: red;
+  font-weight: bold; /* Make delayed trains text bold */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Styling for train list items */
+ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
+}
+
+li {
+  border: 1px solid #ccc; /* Add a border around each train item */
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #fff; /* White background for better readability */
+  cursor: pointer; /* Change cursor to pointer on hover for clickable items */
+  display: flex; /* Use flexbox to align train information */
+  justify-content: space-between; /* Space evenly between train name and additional info */
+  align-items: center; /* Center vertically */
+}
+
+/* Styling for selected train item */
+li.selected {
+  background-color: #e0e0e0; /* Light gray background for selected train */
+}
+
+/* Styling for additional information within train list items */
+li span {
+  margin-left: 10px; /* Add spacing between train name and additional info */
+}
+
+/* Styling for search input */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styling for select dropdown */
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styling for buttons */
+button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue button color */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Styling for booking details */
+.booking-details {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+/* Styling for train details */
+.train-details {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+/* Styling for header elements */
+h1 {
+  color: #007bff; /* Blue header text color */
+}
+
+h2 {
+  color: #333; /* Dark header text color */
+}
+
+/* Styling for success message */
+.success-message {
+  color: #28a745; /* Green text color for success messages */
+}
+
+/* Styling for error message */
+.error-message {
+  color: #dc3545; /* Red text color for error messages */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  li {
+    flex-direction: column; /* Stack train information for smaller screens */
+    text-align: left;
+  }
+  li span {
+    margin-top: 5px; /* Add spacing between additional info in smaller screens */
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-*/
