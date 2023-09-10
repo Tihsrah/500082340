@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
+import { Container, Typography, TextField, Select, MenuItem } from '@mui/material';
 import './App.css';
 
 function TrainList() {
@@ -13,23 +14,22 @@ function TrainList() {
       .then((data) => setTrainData(data));
   }, []);
 
-
   useEffect(() => {
     fetch('http://localhost:3000/api/trains')
       .then((response) => response.json())
       .then((data) => {
-        const currentTime = { Hours: 12, Minutes: 0, Seconds: 0 }; // Assuming current time is 12:00:00
+        const currentTime = { Hours: 12, Minutes: 0, Seconds: 0 };
         const filteredData = data.filter(train => {
           const trainTime = train.departureTime;
           const timeDifference = (trainTime.Hours - currentTime.Hours) * 60 + (trainTime.Minutes - currentTime.Minutes);
-          return timeDifference > 30; // Ignore trains departing in the next 30 minutes
+          return timeDifference > 30;
         });
         setTrainData(filteredData);
       });
   }, []);
 
   const filteredTrains = trainData
-    .filter((train) => train.trainName.toLowerCase().includes(searchTerm.toLowerCase()))
+    .filter(train => train.trainName.toLowerCase().includes(searchTerm.toLowerCase()))
     .sort((a, b) => {
       switch (sortKey) {
         case 'departureTime':
@@ -44,25 +44,46 @@ function TrainList() {
     });
 
   return (
-    <div>
-      <input
-        type="text"
+    <Container>
+      {/* <Typography 
+        variant="h4" 
+        align="center" 
+        component={RouterLink} 
+        to="/" 
+        sx={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
+      >
+        Train Information
+      </Typography> */}
+      {/* <RouterLink to="/">
+      <h1>Train Information</h1>
+    </RouterLink> */}
+      <TextField
+        fullWidth
+        variant="outlined"
         placeholder="Search for trains..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <select onChange={(e) => setSortKey(e.target.value)}>
-        <option value="">Sort by</option>
-        <option value="departureTime">Departure Time</option>
-        <option value="seatsAvailable">Seats Available</option>
-        <option value="price">Price</option>
-      </select>
+      <Select
+        fullWidth
+        variant="outlined"
+        value={sortKey}
+        onChange={(e) => setSortKey(e.target.value)}
+        style={{ backgroundColor: 'white', color: 'black' }}
+      >
+        <MenuItem value="">
+          <em>Sort by</em>
+        </MenuItem>
+        <MenuItem value="departureTime">Departure Time</MenuItem>
+        <MenuItem value="seatsAvailable">Seats Available</MenuItem>
+        <MenuItem value="price">Price</MenuItem>
+      </Select>
       <ul>
         {filteredTrains.map((train, index) => (
           <li key={index}>
-            <Link to={`/train/${train.trainNumber}`}>
+            <RouterLink to={`/train/${train.trainNumber}`}>
               {train.trainName} - {train.trainNumber}
-            </Link>
+            </RouterLink>
             <span className={train.delayedBy > 10 ? 'delayed' : ''}>
               | Delayed By: {train.delayedBy} minutes
             </span>
@@ -75,7 +96,7 @@ function TrainList() {
           </li>
         ))}
       </ul>
-    </div>
+    </Container>
   );
 }
 

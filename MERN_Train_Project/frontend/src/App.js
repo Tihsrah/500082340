@@ -239,7 +239,7 @@
 
 // two page
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link  } from 'react-router-dom';
 import TrainList from './TrainList';
 import TrainDetail from './TrainDetail';
 import BookingDetail from './BookingDetail';
@@ -248,7 +248,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <h1>Train Information</h1>
+      <Link to="/">
+          Train Information
+        </Link>
         <Routes>
           <Route path="/" element={<TrainList />} />
           <Route path="/train/:trainNumber" element={<TrainDetail />} />

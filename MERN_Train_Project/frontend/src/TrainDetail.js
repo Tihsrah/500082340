@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link as RouterLink } from 'react-router-dom';
+import { Container, Typography, Button } from '@mui/material';
 
 function TrainDetail() {
   const { trainNumber } = useParams();
@@ -12,17 +12,24 @@ function TrainDetail() {
   }, [trainNumber]);
 
   return (
-    <div>
+    <Container>
       {selectedTrain && (
         <div>
-          <h2>Train Details</h2>
-          <p>Train Name: {selectedTrain.trainName}</p>
-          <p>Train Number: {selectedTrain.trainNumber}</p>
+          <Typography variant="h4">Train Details</Typography>
+          <Typography variant="h6">Train Name: {selectedTrain.trainName}</Typography>
+          <Typography variant="h6">Train Number: {selectedTrain.trainNumber}</Typography>
           {/* Add other details here */}
-          <Link to={`/booking/${selectedTrain.trainNumber}`}>Book this train</Link>
+          <Button
+            variant="contained"
+            color="primary"
+            component={RouterLink}
+            to={`/booking/${selectedTrain.trainNumber}`}
+          >
+            Book this train
+          </Button>
         </div>
       )}
-    </div>
+    </Container>
   );
 }
 

@@ -94,3 +94,22 @@ button:hover, a:hover {
     margin-top: 5px;
   }
 }
+/* Additional Styling for expensive trains */
+.expensive {
+  border: 2px solid gold;
+}
+
+/* Additional Styling for cheap trains */
+.cheap {
+  border: 2px solid green;
+}
+
+/* Additional Styling for AC class */
+.ac-class {
+  font-style: italic;
+}
+
+/* Additional Styling for Sleeper class */
+.sleeper-class {
+  text-decoration: underline;
+}

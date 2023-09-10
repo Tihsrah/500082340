@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link as RouterLink } from 'react-router-dom';
+import { Container, Typography, Button } from '@mui/material';
 
 function BookingDetail() {
   const { trainNumber } = useParams();
@@ -8,15 +8,25 @@ function BookingDetail() {
   const [bookedTrain, setBookedTrain] = useState({ trainName: 'Example Train', trainNumber });
 
   return (
-    <div>
+    <Container>
       {booking && (
         <div>
-          <h2>Booking Details</h2>
-          <p>You have successfully booked {bookedTrain.trainName} - {bookedTrain.trainNumber}</p>
-          <Link to="/" onClick={() => setBooking(false)}>Cancel Booking</Link>
+          <Typography variant="h4">Booking Details</Typography>
+          <Typography variant="h6">
+            You have successfully booked {bookedTrain.trainName} - {bookedTrain.trainNumber}
+          </Typography>
+          <Button
+            variant="contained"
+            color="secondary"
+            component={RouterLink}
+            to="/"
+            onClick={() => setBooking(false)}
+          >
+            Cancel Booking
+          </Button>
         </div>
       )}
-    </div>
+    </Container>
   );
 }
 
